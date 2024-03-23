@@ -1,0 +1,17 @@
+  <div class="card h-100">
+    <img [src]="prod_data.images[0]" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{prod_data.title}}</h5>
+      <p class="card-text">{{prod_data.description}}</p>
+      <p class="card-text">the brand is: {{prod_data.brand}}</p>
+      <p class="card-text">the price is : ${{prod_data.price}}</p>
+      
+      <div class="btns d-flex gap-4">
+
+        <button type="button" (click)="Redirection(prod_data.id)" class="btn btn-secondary">Show more Details</button>
+        <button type="button" (click)="addtocart(prod_data)" class="btn btn-outline-success">Add to card</button>
+  
+      
+      </div>
+    </div>
+  </div>

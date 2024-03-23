@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Product_Details</h1>
+        <hr>
+
+        <div class="row pt-5 gap-4">
+            <div class="carusel col-xxl-3 col-md-6 col-sm-10">
+                <img class="single_img" [src]="prod_details.thumbnail" alt="">
+                
+                <div class="caru_img">
+                    @for (item of prod_details.images; track $index) {
+                        <img [src]="item" alt="">
+
+                    }
+
+                </div>
+
+            
+            </div>
+
+            <div class="col-xxl-4 col-md-6 col-sm-10 single_details">
+                
+                <h1>Product_Name : {{prod_details.title}}</h1>    
+                <h3>Price : ${{prod_details.price}}  </h3>    
+                
+                 <h6>
+                    discount:  ${{prod_details.price - (prod_details.price * (prod_details.discountPercentage /100) ) }} 
+                </h6> 
+                
+                <!-- <div class="counter">
+
+                    <button (click)="increase()" class="option">+</button>
+                    <span class="count">0</span>
+                    <button class="option">-</button>
+
+
+                </div> -->
+
+                
+                <p> product_description : {{prod_details.description}}</p>     
+                
+                <div class="btns d-flex gap-5">
+                    <button type="button" class="btn btn-success p-1">Buy Now </button>
+                    <button type="button" class="btn btn-light p-1">Add To Cart</button>
+                </div>
+
+                
+                <ngb-rating class="star" [rate]="prod_details.rating" [max]="5" [readonly]="true" />
+                
+
+            
+            </div>
+
+
+        </div>
+        
+
+    </div>
+
+
+
+
+
+
+
+    
+</body>
+</html>

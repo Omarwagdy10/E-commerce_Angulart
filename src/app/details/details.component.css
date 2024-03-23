@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+.row{
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.single_img{
+    width: 100%;
+}
+
+.single_details{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.star{
+    font-size: 35px;
+    color: rgb(222, 222, 40);
+}
+
+.caru_img{
+    display: flex;
+    
+}
+.caru_img img{
+    border: solid;
+    width: 30%;
+    margin-top: 10px;
+}
+
+.btn-light{
+    border: solid 2px rgb(102, 183, 102);
+    font-weight: 600;
+}
+
+.counter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.option{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-size: 20px;
+    
+}

@@ -1,0 +1,154 @@
+<form class="row g-3" [formGroup]="userform" (ngSubmit)="handelSubmit()">
+
+  <div class="col-md-12">
+    <label for="inputEmail4" class="form-label">UserName</label>
+    <input type="text" class="form-control" id="inputEmail4" formControlName="userName">
+
+    @if(userform.controls['userName'].invalid && userform.controls['userName'].touched){
+
+    <div class="alert alert-danger" role="alert">
+
+      @if(userform.controls['userName'].errors?.['required']){
+      <small> This Failed is required </small>
+      <!-- <div class="alert alert-danger" role="alert">
+        This Failed is required
+      </div> -->
+
+      }
+      @if(userform.controls['userName'].errors?.['minLength']){
+      <small>Min length is 3 characters</small>
+      <!-- <div class="alert alert-danger" role="alert">
+      Min length is 3 characters
+    </div> -->
+      }
+
+      @if(userform.controls['userName'].errors?.['maxLength']){
+      <small>Max length is 15 characters</small>
+
+      <!-- <div class="alert alert-danger" role="alert">
+        Max length is 15 characters
+      </div> -->
+
+      }
+
+
+    </div>
+
+    }
+
+
+
+  </div>
+
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Email</label>
+    <input type="email" class="form-control" id="inputEmail4" formControlName="Email">
+    @if(userform.controls['Email'].invalid && userform.controls['Email'].touched){
+
+      @if(userform.controls['Email'].errors?.['email']){
+        <div class="alert alert-danger" role="alert">
+          invalid Email
+        </div>
+      }
+      @if(userform.controls['Email'].errors?.['minLength']){
+        <div class="alert alert-danger" role="alert">
+          min length is 7
+        </div>
+
+ 
+      }
+      @if(userform.controls['Email'].errors?.['required']){
+        <div class="alert alert-danger" role="alert">
+          this Filed is Required
+        </div>
+
+ 
+      }
+
+
+    }
+  
+  </div>
+
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Password</label>
+    <input type="password" formControlName="Password" class="form-control" id="inputPassword4">
+    
+    @if(userform.controls['Password'].invalid && userform.controls['Password'].touched){
+      <div class="alert alert-danger" role="alert">
+        <small>required</small>
+        @if(userform.controls['Password'].errors?.['pattern']){
+          <div class="alert alert-danger" role="alert">
+              wrong Value
+          </div>
+        }
+      
+      </div>
+
+
+
+    }
+
+  
+  
+  </div>
+
+
+
+  <div class="col-12">
+    <label for="inputAddress" class="form-label">Address</label>
+    <input type="text" class="form-control" id="inputAddress" formControlName="Address"
+      placeholder="Enter Your address">
+
+      @if(userform.controls['Address'].touched && userform.controls['Address'].invalid){
+        @if(userform.controls['Address'].errors?.['required']){
+          <div class="alert alert-danger" role="alert">
+              this filed is required
+          </div>
+        }
+
+
+      } 
+
+  </div>
+
+  <div class="col-md-6">
+    <label for="inputCity" class="form-label">City</label>
+    <input type="text" class="form-control" formControlName="City" id="inputCity">
+  </div>
+  <div class="col-md-4">
+    <label for="inputState" class="form-label">State</label>
+    <select id="inputState" class="form-select">
+      <option selected>Choose...</option>
+      <option>...</option>
+    </select>
+  </div>
+  <div class="col-md-2">
+    <label for="inputZip" class="form-label">Zip</label>
+    <input type="text" class="form-control" id="inputZip">
+  </div>
+
+  <fieldset class="row mt-3">
+    <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+    <div class="col-sm-10">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="Mail" checked>
+        <label class="form-check-label" for="gridRadios1">
+          Mail
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="Femail">
+        <label class="form-check-label" for="gridRadios2">
+          Femail
+        </label>
+      </div>
+
+    </div>
+  </fieldset>
+
+
+  <div class="col-12">
+    <button type="submit" (click)="savedata()" [disabled] = 'userform.invalid' class="btn btn-primary">Sign in</button>
+  </div>
+</form>

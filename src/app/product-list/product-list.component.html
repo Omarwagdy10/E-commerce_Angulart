@@ -1,0 +1,16 @@
+
+
+<div class="row row-cols-1 row-cols-md-2  g-4">
+    @for(game of gamecenter ; track $index){
+
+        <div class="col-xxl-4 col-sm-6">
+            <app-product-data [prod_data]="game " ></app-product-data>
+        </div>
+
+
+        
+    }
+
+
+
+  </div>

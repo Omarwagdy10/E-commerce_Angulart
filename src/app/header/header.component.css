@@ -1,0 +1,6 @@
+.active_link{
+    border-bottom: solid #89959f ;
+    width: fit-content;
+    font-weight: 700;
+    color: rgb(48, 48, 48);
+}

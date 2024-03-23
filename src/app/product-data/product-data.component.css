@@ -1,0 +1,11 @@
+.card-img-top{
+    width: 100%;
+    margin: auto;
+    height: 300px;
+    object-fit: fill;
+}
+
+.btn-secondary a{
+    text-decoration: none;
+    color: white;
+}

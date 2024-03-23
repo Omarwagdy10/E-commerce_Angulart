@@ -1,0 +1,55 @@
+<!-- <app-products></app-products> -->
+
+<h1>Cart</h1>
+
+<!-- {{cartService.getitem() | json }} -->
+
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Product</th>
+            <th scope="col">product_name</th>
+            <th scope="col">product_price</th>
+            <th scope="col">count</th>
+            <th scope="col">Option</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+            @for (item of CartService.getitem(); track $index) {
+                <tr>
+                  <th scope="row">{{item.id}}</th>
+                  <td><img class="w-md-75 w-sm-100 w-xxl-25 w-xl-75" [src]="item.images[0]" alt=""></td>
+                  <td>{{item.title}}</td>
+                  <td>{{item.price * item.quantity}}</td>
+                  <td>{{item.quantity}}</td>
+                  <td>
+                    <div class="d-flex gap-4 options">
+                      <button type="button" (click)="CartService.incrementQuantity(item.id)" class="btn btn-outline-success">+</button>
+                      <h5>{{item.quantity}}</h5>
+                      <button type="button" (click)="CartService.decrementQuantity(item.id)" class="btn btn-outline-danger">-</button>
+
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+                    <button type="button" (click)="delete(item)" class="btn btn-danger">Delete</button>
+
+                  </td>
+
+                </tr>
+            }
+        </tbody>
+      </table>
+
+<!-- 
+
+ @for (item of cartService.getitem(); track item.id) {
+    <h4>{{item.title}}</h4>
+
+ } -->
